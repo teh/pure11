@@ -99,5 +99,25 @@ auto main(int, char *[]) -> int {
 };
 ```
 ---
-#### [Getting Started](https://github.com/andyarvanitis/pure11/wiki/GettingStarted)
+#### Getting Started
+This assumes you are running OS X or a Unix-like system (Linux, *BSD, etc.), and already have the ability to [build PureScript] (http://www.purescript.org/download/). Instead of cloning the repository in the instructions, make sure to use [this project's repo](https://github.com/pure11/purescript).
+
+1. Make sure you have developer tools for your system installed. For OS X, you'll need a recent version of Xcode. For Linux, etc., you need gcc 4.9.2 or later, including g++ support. You can also use clang 3.5 or later, but it still requires gcc for its C++ standard libraries.
+
+2. Install [CMake] (https://cmake.org/install/). Afterwards, make sure `cmake` is in your `PATH`.
+
+3. Create a working directory wherever you like. From the purescript source tree, copy `pcc/Makefile.example` to it, renaming it to `Makefile` (no extension).
+
+4. Create a `src` directory in this working directory, which will be where you will place your own PureScript source files.
+
+5. Edit your `Makefile` to your liking if you want it to use different locations for the `pcc` executable or PureScript packages.
+
+6. Pull in your desired PureScript packages using `git` (bower will be supported later), making sure to use the pure11-specific versions in [this list](https://github.com/andyarvanitis/pure11/wiki/Packages).
+
+6. You should now be ready to build a PureScript program. As stated above, place your source file(s) in the working directory's `src` subdirectory and execute `make`. This will generate the C++ source tree for your program, located in the `output` subdirectory it created. 
+
+7. To build the C++ code, make a `build` subdirectory in your working directory and `cd` to it. From there, execute `cmake ../output; make`. If your machine has multiple cores, you might want to use `make -jN`, where `N` is equal to the number of cores.
+
+8. If the build was successful, run your program using `./Main`.
+
 ---
