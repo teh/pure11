@@ -26,6 +26,7 @@
 * PureScript arrays are represented as `std::vector`
 * `String` type corresponds to `std::string`
 * `Number` is C++ `double`, `Int` is C++ `long`, `Char` is `char`, `Boolean` is `bool`
+* [Standard packages currently building (lightly tested)](https://github.com/andyarvanitis/pure11/wiki/Packages)
 
 #### TO-DO:
 
@@ -99,6 +100,4 @@ auto main(int, char *[]) -> int {
 ```
 ---
 #### [Getting Started](https://github.com/andyarvanitis/pure11/wiki/GettingStarted)
----
-#### [Standard packages currently building (lightly tested)](https://github.com/andyarvanitis/pure11/wiki/Packages)
 ---
