@@ -97,3 +97,8 @@ auto main(int, char *[]) -> int {
     return 0L;
 };
 ```
+---
+#### [Getting Started](https://github.com/andyarvanitis/pure11/wiki/GettingStarted)
+---
+#### [Standard packages currently building (lightly tested)](https://github.com/andyarvanitis/pure11/wiki/Packages)
+---
