@@ -8,7 +8,7 @@ A small strongly typed programming language with expressive types that compiles 
 
 ---
 
-## **All code is located in the [pure11 github organization](https://github.com/pure11)**
+### **All code is located in the [pure11 github organization](https://github.com/pure11)**
 
 ---
 
