@@ -99,6 +99,8 @@ auto main(int, char *[]) -> int {
 };
 ```
 ---
+#### [FFI examples](https://github.com/andyarvanitis/pure11/wiki/FFI_Examples)
+---
 #### Getting Started
 This assumes you are running OS X or a Unix-like system (Linux, *BSD, etc.), and already have the ability to [build PureScript from source] (http://www.purescript.org/download/) (bottom of the page) -- but instead of cloning and building the repository in the instructions, make sure to use [this project's repo](https://github.com/pure11/purescript).
 
