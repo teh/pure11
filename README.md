@@ -116,9 +116,10 @@ This assumes you are running OS X or a Unix-like system (Linux, *BSD, etc.), and
 
 6. Pull in your desired PureScript packages using `git` (bower will be supported later), making sure to use the pure11-specific versions in [this list](https://github.com/andyarvanitis/pure11/wiki/Packages).
 
-6. You should now be ready to build a PureScript program. As stated above, place your source file(s) in the working directory's `src` subdirectory and execute `make`. This will generate the C++ source tree for your program, located in the `output` subdirectory it created. 
+7. You should now be ready to build a PureScript program.
+  * As stated above, place your source file(s) in the working directory's `src` subdirectory and execute `make`. If your machine has multiple cores, you might want to use `make -jN`, where `N` is the number of cores.
 
-7. To build the C++ code, make a `build` subdirectory in your working directory and `cd` to it. From there, execute `cmake ../output; make`. If your machine has multiple cores, you might want to use `make -jN`, where `N` is equal to the number of cores.
+  * This will generate the C++ source tree for your program (in the `output` subdirectory it created), and then build it.  The resulting executable will be in your working directory and called `Main`.
 
 8. If the build was successful, run your program using `./Main`.
 
