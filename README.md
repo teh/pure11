@@ -37,7 +37,7 @@
 #### Future ideas:
 
 * Unboxed math on a per-function basis
-* Nice facilities (modules) for concurrency/parallelism, using `std::thread`, etc. under the hood
+* Nice facilities (modules) for concurrency/parallelism, using `std::thread`, `std::async`, etc. under the hood
 * Compiler or lib options for other types of memory management — e.g. the Boehm (or other) GC
 * `BigInt` via GNU GMP
 * Stricter exports in C++ code
