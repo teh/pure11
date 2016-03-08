@@ -16,7 +16,7 @@
 
 #### Differences from PureScript:
 
-* Foreign imports are C++11 (or C) instead of JavaScript
+* Foreign imports are C++11 (or C) instead of JavaScript ([FFI examples](https://github.com/andyarvanitis/pure11/wiki/FFI_Examples))
 * Foreign functions are not written as curried functions (any necessary currying is done implicitly by the compiler)
 * Compiler is `pcc` instead of `psc`
   - Generates a simple CMake file for easy experimentation
