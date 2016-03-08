@@ -4,7 +4,7 @@
 
 ---
 
-### **!!! All code is in the [pure11 github organization](https://github.com/pure11) !!!**
+### **All code is in the [pure11 github organization](https://github.com/pure11)**
 
 ---
 
@@ -16,15 +16,16 @@
 
 #### Differences from PureScript:
 
-* Foreign imports are C++11 instead of JavaScript
+* Foreign imports are C++11 (or C) instead of JavaScript
+* Foreign functions are not written as curried functions (any necessary currying is done implicitly by the compiler)
 * Compiler is `pcc` instead of `psc`
   - Generates a simple CMake file for easy experimentation
 * No Pure11-specific REPL
 
 #### Other notes:
 
-* PureScript arrays are represented as `std::vector`
-* `String` type corresponds to `std::string`
+* PureScript arrays are implmented using [`std::deque`](http://en.cppreference.com/w/cpp/container/deque) (random access *O(1)*)
+* `String` types are implmented using either C-strings (for literals) or `std::string`
 * `Number` is C++ `double`, `Int` is C++ `long`, `Char` is `char`, `Boolean` is `bool`
 * [Standard packages currently building (lightly tested)](https://github.com/andyarvanitis/pure11/wiki/Packages)
 
