@@ -18,8 +18,7 @@
 
 * Foreign imports are C++11 (or C) instead of JavaScript ([FFI examples](https://github.com/andyarvanitis/pure11/wiki/FFI_Examples))
 * Foreign functions are not written as curried functions (any necessary currying is done implicitly by the compiler)
-* Compiler is `pcc` instead of `psc`
-  - Generates a simple CMake file for easy experimentation
+* Compiler is `pcc` instead of `psc`, `make` is recommended for building
 * No Pure11-specific REPL
 
 #### Other notes:
@@ -47,7 +46,7 @@
 
 * Everything you need to build [PureScript](https://github.com/purescript/purescript)
 * A C++11-capable toolchain, e.g. recent versions of clang, gcc
-* Installed CMake is helpful (for the provided quickstart CMake file generated), though not required. You should be able to use your favorite C++ build system, tools, debuggers, etc., for the generated code.
+* GNU Make is the default supported build tool, but you should be able to use your favorite C++ build system, tools, debuggers, etc.
 
 #### Examples
 
@@ -107,21 +106,15 @@ This assumes you are running OS X or a Unix-like system (Linux, *BSD, etc.), and
 
 1. Make sure you have developer tools for your system installed. For OS X, you'll need a recent version of Xcode. For Linux, etc., you need gcc 4.9.2 or later, including g++ support. You can also use clang 3.5 or later, but it still requires gcc for its C++ standard libraries.
 
-2. Install [CMake] (https://cmake.org/install/). Afterwards, make sure `cmake` is in your `PATH`.
+2. Create a working directory wherever you like, and a `src` subdirectory under it, which will be where you will place your own PureScript source files.
 
-3. Create a working directory wherever you like. From the purescript source tree, copy `pcc/Makefile.example` to it, renaming it to `Makefile` (no extension).
+3. From your working directory, run the `{installation_path}/pcc` command with no arguments. This will generate a default `Makefile` for you in that directory. You can edit it if needed to change things like the location of the PureScript packages you intend to download and use.
 
-4. Create a `src` directory in this working directory, which will be where you will place your own PureScript source files.
+4. Pull in your desired PureScript packages using `git` (bower will be supported later), making sure to use the pure11-specific versions in [this list](https://github.com/andyarvanitis/pure11/wiki/Packages).
 
-5. Edit your `Makefile` to your liking if you want it to use different locations for the `pcc` executable or PureScript packages.
-
-6. Pull in your desired PureScript packages using `git` (bower will be supported later), making sure to use the pure11-specific versions in [this list](https://github.com/andyarvanitis/pure11/wiki/Packages).
-
-7. You should now be ready to build a PureScript program.
+5. You should now be ready to build a PureScript program.
   * As stated above, place your source file(s) in the working directory's `src` subdirectory and execute `make`. If your machine has multiple cores, you might want to use `make -jN`, where `N` is the number of cores.
 
-  * This will generate the C++ source tree for your program (in the `output` subdirectory it created), and then build it.  The resulting executable will be in your working directory and called `Main`.
-
-8. If the build was successful, run your program using `./Main`.
+  * This will generate the C++ source tree for your program and then build an executable binary. The resulting executable will be in the `bin` subdirectory under the output directory and called `main` (so `output/bin/main`, by default).
 
 ---
