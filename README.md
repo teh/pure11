@@ -69,33 +69,31 @@ module Main where
 ```c++
 #include "Main/Main.hh"
 namespace Main {
-    using namespace PureScript;
-    using namespace Prelude;
-    using namespace Control_Monad_Eff_Console;
-    using namespace Control_Monad_Eff;
+  using namespace PureScript;
+  using namespace Prelude;
+  using namespace Control_Monad_Eff_Console;
+  using namespace Control_Monad_Eff;
 
-    auto fib(const any& _0) -> any {
-        if (_0 == 0L) {
-            return 0L;
-        };
-        if (_0 == 1L) {
-            return 1L;
-        };
-        return fib(_0 - 2L) + fib(_0 - 1L);
+  auto fib(const any& v) -> any {
+    switch (cast<long>(v)) {
+      case 0: return 0;
+      case 1: return 1;
     };
-    const any main = [](any::as_thunk) -> const any& {
-        static const any _value_ = [=]() -> any {
-            Control_Monad_Eff_Console::log("Here's the result of fib 10:")();
-            return Control_Monad_Eff_Console::print(Prelude::showInt)(fib(10L))();
-        };
-        return _value_;
+    return fib(v - 2) + fib(v - 1);
+  };
+  const any main = [](any::as_thunk) -> const any& {
+    static const any $value$ = [=]() -> any {
+      Control_Monad_Eff_Console::log("Here's the result of fib 10:")();
+      return Control_Monad_Eff_Console::print(Prelude::showInt, fib(10))();
     };
-};
+    return $value$;
+  };
+}
 
 auto main(int, char *[]) -> int {
-    using namespace Main;
-    Main::main(any::unthunk)();
-    return 0L;
+  using namespace Main;
+  Main::main(any::unthunk)();
+  return 0;
 };
 ```
 ---
