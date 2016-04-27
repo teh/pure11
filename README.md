@@ -11,7 +11,7 @@
 #### Performance
 
 * No runtime system (beyond some support classes and the standard C++11 runtime library)
-* Uses native C++11 reference counting (`std::shared_ptr`) for relatively lightweight automatic memory management
+* Uses native C++11 reference counting (`std::shared_ptr`) for thread-safe* and highly interoperable automatic memory management
 * Uses PureScript's normal tail call optimizations for generated C++11 code
 
 #### Differences from PureScript:
