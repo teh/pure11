@@ -45,7 +45,7 @@
 #### Requirements
 
 * Everything you need to build [PureScript](https://github.com/purescript/purescript)
-* A C++11-capable toolchain, e.g. recent versions of clang, gcc
+* A C++11-capable toolchain, e.g. recent versions of clang, gcc, Microsoft Visual Studio 2015
 * GNU Make is the default supported build tool, but you should be able to use your favorite C++ build system, tools, debuggers, etc.
 
 #### Examples
