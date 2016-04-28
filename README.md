@@ -108,7 +108,7 @@ This assumes you are running OS X or a Unix-like system (Linux, *BSD, etc.), and
 
 3. Create a working directory wherever you like, and a `src` subdirectory under it, which will be where you will place your own PureScript source files.
 
-4. From your working directory, run the `{installation_path}/pcc` command with no arguments. This will generate a default `Makefile` for you in that directory. You can edit it if needed to change things like the location of the PureScript packages you intend to download and use.
+4. From your working directory, run the `{installation_path}/pcc` command with no arguments. This will generate a default `Makefile` for you in that directory. You can edit it if needed to change things like the location of the PureScript packages you intend to download and use. There are also some usage notes in the `Makefile` itself.
 
 5. Pull in your desired PureScript packages using `git` (bower will be supported later), making sure to use the pure11-specific versions in [this list](https://github.com/andyarvanitis/pure11/wiki/Packages).
 
