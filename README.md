@@ -11,7 +11,7 @@
 #### Performance
 
 * No runtime system (beyond some support classes and the standard C++11 runtime library)
-* Uses native C++11 reference counting (`std::shared_ptr`) for thread-safe* and highly interoperable automatic memory management
+* Uses either native C++11 reference counting (`std::shared_ptr`) for thread-safe* and highly interoperable automatic memory management, or the [Boehm-Demers-Weiser Garbage Collector](http://hboehm.info/gc/) -- selectable when building (see instructions below)
 * Uses PureScript's normal tail call optimizations for generated C++11 code
 
 #### Differences from PureScript:
@@ -104,14 +104,18 @@ This assumes you are running OS X or a Unix-like system (Linux, *BSD, etc.), and
 
 1. Make sure you have developer tools for your system installed. For OS X, you'll need a recent version of Xcode. For Linux, etc., you need gcc 4.9.2 or later, including g++ support. You can also use clang 3.5 or later, but it still requires gcc for its C++ standard libraries.
 
-2. Create a working directory wherever you like, and a `src` subdirectory under it, which will be where you will place your own PureScript source files.
+2. If you wish to use the Boehm garbage collector (better runtime performance, in general), install it for your system. For OS X, [brew](http://brew.sh/) is an easy method and recommended. For linux, it's available under package names such as `libgc-dev` (for Debian/Ubuntu).
 
-3. From your working directory, run the `{installation_path}/pcc` command with no arguments. This will generate a default `Makefile` for you in that directory. You can edit it if needed to change things like the location of the PureScript packages you intend to download and use.
+3. Create a working directory wherever you like, and a `src` subdirectory under it, which will be where you will place your own PureScript source files.
 
-4. Pull in your desired PureScript packages using `git` (bower will be supported later), making sure to use the pure11-specific versions in [this list](https://github.com/andyarvanitis/pure11/wiki/Packages).
+4. From your working directory, run the `{installation_path}/pcc` command with no arguments. This will generate a default `Makefile` for you in that directory. You can edit it if needed to change things like the location of the PureScript packages you intend to download and use.
 
-5. You should now be ready to build a PureScript program.
+5. Pull in your desired PureScript packages using `git` (bower will be supported later), making sure to use the pure11-specific versions in [this list](https://github.com/andyarvanitis/pure11/wiki/Packages).
+
+6. You should now be ready to build a PureScript program.
   * As stated above, place your source file(s) in the working directory's `src` subdirectory and execute `make`. If your machine has multiple cores, you might want to use `make -jN`, where `N` is the number of cores.
+  
+  * To use the garbage collector, add `USE_GC=yes` to the `make` command line (or you can add it to the `Makefile` that you generated in step 4).
 
   * This will generate the C++ source tree for your program and then build an executable binary. The resulting executable will be in the `bin` subdirectory under the output directory and called `main` (so `output/bin/main`, by default).
 
