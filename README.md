@@ -11,7 +11,7 @@
 #### Performance
 
 * No runtime system (beyond some support classes and the standard C++11 runtime library)
-* Uses either native C++11 reference counting (`std::shared_ptr`) for thread-safe* and highly interoperable automatic memory management, or the [Boehm-Demers-Weiser Garbage Collector](http://hboehm.info/gc/) -- selectable when building (see instructions below)
+* For automatic memory management, uses either native C++11 reference counting (`std::shared_ptr`), or the [Boehm-Demers-Weiser Garbage Collector](http://hboehm.info/gc/) -- selectable when building (see instructions below)
 * Uses PureScript's normal tail call optimizations for generated C++11 code
 
 #### Differences from PureScript:
@@ -38,7 +38,6 @@
 
 * Unboxed math on a per-function basis
 * Nice facilities (modules) for concurrency/parallelism, using `std::thread`, `std::async`, etc. under the hood
-* Compiler or lib options for other types of memory management — e.g. the Boehm (or other) GC
 * `BigInt` via GNU GMP
 * Stricter exports in C++ code
 
