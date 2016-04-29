@@ -103,7 +103,7 @@ This assumes you are running OS X or a Unix-like system (Linux, *BSD, etc.), and
 
 1. Make sure you have developer tools for your system installed. For OS X, you'll need a recent version of Xcode. For Linux, etc., you need gcc 4.9.2 or later, including g++ support. You can also use clang 3.5 or later, but it still requires gcc for its C++ standard libraries.
 
-2. If you wish to use the Boehm garbage collector (better runtime performance, in general), install it for your system. For OS X, [brew](http://brew.sh/) is an easy method and recommended. For linux, it's available under package names such as `libgc-dev` (for Debian/Ubuntu).
+2. If you wish to use the Boehm garbage collector (better runtime performance, in general), install it for your system. For OS X, [brew](http://brew.sh/) is an easy method and recommended (package `bdw-gc`). For linux, it's available under package names such as `libgc-dev` (for Debian/Ubuntu).
 
 3. Create a working directory wherever you like, and a `src` subdirectory under it, which will be where you will place your own PureScript source files.
 
