@@ -36,9 +36,9 @@
 
 #### Future ideas:
 
-* Unboxed math on a per-function basis
 * Nice facilities (modules) for concurrency/parallelism, using `std::thread`, `std::async`, etc. under the hood
 * `BigInt` via GNU GMP
+* Unboxed math on a per-function basis
 * Stricter exports in C++ code
 
 #### Requirements
