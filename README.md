@@ -91,7 +91,7 @@ namespace Main {
 
 auto main(int, char *[]) -> int {
   using namespace Main;
-  Main::main(any::unthunk)();
+  Main::main();
   return 0;
 };
 ```
