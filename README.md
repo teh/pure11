@@ -80,12 +80,9 @@ namespace Main {
     };
     return fib(v - 2) + fib(v - 1);
   };
-  const any main = [](any::as_thunk) -> const any& {
-    static const any $value$ = [=]() -> any {
-      Control_Monad_Eff_Console::log("Here's the result of fib 10:")();
-      return Control_Monad_Eff_Console::print(Prelude::showInt, fib(10))();
-    };
-    return $value$;
+  auto main() -> any {
+    Control_Monad_Eff_Console::log("Here's the result of fib 10:")();
+    return Control_Monad_Eff_Console::print(Prelude::showInt, fib(10))();
   };
 }
 
