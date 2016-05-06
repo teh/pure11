@@ -11,7 +11,7 @@
 #### Performance
 
 * No runtime system (beyond some support classes and the standard C++11 runtime library)
-* For automatic memory management, uses either native C++11 reference counting (`std::shared_ptr`), or the [Boehm-Demers-Weiser Garbage Collector](http://hboehm.info/gc/) -- selectable when building (see instructions below)
+* For automatic memory management, uses either native C++11 reference counting (`std::shared_ptr`), or the [Boehm-Demers-Weiser Garbage Collector](http://hboehm.info/gc/) -- **selectable when building** (see instructions below)
 * Uses PureScript's normal tail call optimizations for generated C++11 code
 
 #### Differences from PureScript:
