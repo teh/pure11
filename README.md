@@ -1,6 +1,6 @@
 [![PureScript](https://raw.githubusercontent.com/purescript/purescript/master/logo.png)](http://purescript.org)
 
-**Pure11** is an experimental C++11 compiler/backend for [PureScript](https://github.com/purescript/purescript). It attempts to generate "sane" and performant C++11 code (instead of JavaScript), in the spirit of PureScript.
+**Pure11** is an experimental C++11/native compiler backend for [PureScript](https://github.com/purescript/purescript). It attempts to generate "sane", performant, and portable C++11 code as an intermediate language, which is then compiled to a native executable binary. This enables easy interoperability with existing C/C++ frameworks and libraries on a number of platforms.
 
 ---
 
